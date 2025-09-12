@@ -1,0 +1,35 @@
+@tailwind base; 
+@tailwind components; 
+@tailwind utilities;
+
+body{
+  font-family: 'NotoSans-Regular', sans-serif !important;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('@/assets/fonts/Inter-Regular.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NotoSans-Regular';
+  src: url('@/assets/fonts/NotoSans-Regular.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Anton';
+  src: url('@/assets/fonts/Anton-Regular.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+.title_font{
+  font-family: 'Anton', sans-serif !important;
+  /* font-weight: 600; */
+}
+.error{
+  @apply pt-2 text-[red];
+}
+.button_auth{
+  @apply text-[#FFFF] bg-[#F15922] text-[15px] text-center rounded-[6px] py-[14px] mt-[32px] cursor-pointer;
+}

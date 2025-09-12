@@ -1,0 +1,88 @@
+export const StockKeys = {
+    MA_TOA: "ma-toa",
+    MA_CAN: "ma-can",
+    TANG: "tang",
+    CAN: "can",
+    LOAI_CAN: "loai-can",
+    GOP_CAN: "gop-can",
+    DIEN_TICH_TIM_TUONG: "dien-tich-tim-tuong-m2",
+    DIEN_TICH_THONG_THUY: "dt-thong-thuy-m2",
+    HUONG: "huong",
+    VIEW: "view",
+    GIA_THUAN_CHUA_VAT_VA_KPBT: "gia-thuan-chua-vat-va-kpbt",
+    KPBT: "kpbt",
+    GIA_FULL_CHUA_LAM_TRON: "gia-full-gom-vat-va-kpbt-chua-lam-tron",
+    GIA_FULL: "gia-full-gom-vat-va-kpbt",
+    GIA_TTTD: "gia-tttd",
+    GIA_TTS: "gia-tts",
+    GIA_VAY_70_50: "gia-vay-70-50",
+    GIA_VAY_80_50: "gia-vay-80-50",
+    GIA_VAY: "gia-vay",
+    NGAY_KY_VBTT: "ngay-ky-vbtt",
+    GHI_CHU: "ghi-chu",
+    CSBH: "csbh",
+    LINK_PHIEU_TINH_GIA: "link-phieu-tinh-gia",
+    LINK_ANH_CHI_CAN: "link-anh-chi-can",
+    NOI_THAT: "noi-that",
+    TRANG_THAI: "trang-thai",
+    GIA_FULL_THAP_TANG: "tong-gia-full",
+    PHAN_KHU: "phan-khu",
+    DAY: "day",
+    LOAI_HINH: "loai-hinh",
+    DIEN_TICH: "dien-tich-dat",
+    TCBG: "tcbg",
+};
+
+export const StockLabels: Record<string, string> = {
+    [StockKeys.MA_TOA]: "Mã tòa",
+    [StockKeys.MA_CAN]: "Mã căn",
+    [StockKeys.TANG]: "Tầng",
+    [StockKeys.CAN]: "Căn",
+    [StockKeys.LOAI_CAN]: "Loại căn",
+    [StockKeys.GOP_CAN]: "Gộp căn",
+    [StockKeys.DIEN_TICH_TIM_TUONG]: "Tim tường (m2)",
+    [StockKeys.DIEN_TICH_THONG_THUY]: "Thông thủy (m2)",
+    [StockKeys.HUONG]: "Hướng",
+    [StockKeys.VIEW]: "View",
+    [StockKeys.GIA_THUAN_CHUA_VAT_VA_KPBT]: "Giá thuần (chưa VAT & KPBT)",
+    [StockKeys.KPBT]: "KPBT",
+    [StockKeys.GIA_FULL_CHUA_LAM_TRON]: "Giá full (gồm VAT & KPBT) chưa làm tròn",
+    [StockKeys.GIA_FULL]: "Giá full (gồm VAT & KPBT)",
+    [StockKeys.GIA_TTTD]: "Giá TTTĐ",
+    [StockKeys.GIA_TTS]: "Giá TTS",
+    [StockKeys.GIA_VAY_70_50]: "Giá vay 70% & 50%",
+    [StockKeys.GIA_VAY_80_50]: "Giá vay 80% & 50%",
+    [StockKeys.GIA_VAY]: "Giá vay",
+    [StockKeys.NGAY_KY_VBTT]: "Ngày ký VBTT",
+    [StockKeys.GHI_CHU]: "Ghi chú",
+    [StockKeys.CSBH]: "CSBH",
+    [StockKeys.LINK_PHIEU_TINH_GIA]: "Link phiếu tính giá",
+    [StockKeys.LINK_ANH_CHI_CAN]: "Link ảnh chỉ căn",
+    [StockKeys.NOI_THAT]: "Nội thất",
+    [StockKeys.TRANG_THAI]: "Trạng thái"
+};
+
+
+export const StockLabelsForProjectPriceList: Record<string, string> = {
+    apartment_type: "Loại căn",
+    wall_area: "Tim tường (m2)",
+    net_area: "Thông thủy (m2)",
+    direction: "Hướng",
+    view: "View"
+};
+
+export const SearchProperties: Record<string, string> = {
+    [StockKeys.MA_TOA]: "property-ma-toa",
+    [StockKeys.TANG]: "property-tang",
+    [StockKeys.CAN]: "property-can",
+    [StockKeys.LOAI_CAN]: "property-loai-can",
+    [StockKeys.HUONG]: "property-huong",
+    [StockKeys.GIA_FULL]: "property-gia-full-gom-vat-va-kpbt",
+    [StockKeys.GIA_FULL_THAP_TANG]: "property-tong-gia-full",
+    [StockKeys.PHAN_KHU]: "property-phan-khu",
+    [StockKeys.DAY]: "property-day",
+    [StockKeys.LOAI_HINH]: "property-loai-hinh",
+    [StockKeys.DIEN_TICH]: "property-dien-tich-dat",
+    [StockKeys.MA_CAN]: "property-ma-can"
+
+}
