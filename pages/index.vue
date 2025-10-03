@@ -1,7 +1,8 @@
 <template>
   <div class="pa-o ma-0 mb-[70px]">
     <div class="bg-[#FFFF] rounded-md banner_home  ">
-      <div v-if="settingComp.state.banners.length > 0">
+      Trang chủ
+      <!-- <div v-if="settingComp.state.banners.length > 0">
         <BoxBanner />
       </div>
       <div class=" 2xl:px-0 content_box_home mx-auto">
@@ -17,42 +18,32 @@
           <BoxNew />
           <BoxContactMsd />
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
 <script lang="ts" setup>
-import BoxBanner from "~/components/home/BoxBanner.vue"
-import Introduce from "~/components/home/Introduce.vue";
-import ListCategoryHome from "~/components/home/ListCategoryHome.vue"
-import BoxNew from "~/components/home/BoxNew.vue";
-import BoxTestimonnial from "~/components/home/BoxTestimonial.vue";
-import BoxCountData from "~/components/home/BoxCountData.vue";
-import BoxContactMsd from "~/components/home/BoxContactMsd.vue";
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
 
-const settingComp = useSetting()
-const testimonialComp = useTestimonial()
+// onMounted(async () => {
+//   testimonialComp.fetchTestimonial()
+//   settingComp.fetchSetting()
+//   if (settingComp.state.learningStatisticsDetail?.type === 1) {
+//     console.log(settingComp.state.learningStatisticsDetail.type)
+//     await settingComp.fetchCountData()
+//   }
 
-onMounted(async () => {
-  testimonialComp.fetchTestimonial()
-  settingComp.fetchSetting()
-  if (settingComp.state.learningStatisticsDetail?.type === 1) {
-    console.log(settingComp.state.learningStatisticsDetail.type)
-    await settingComp.fetchCountData()
-  }
-
-  if (route.query['ve-msd'] !== undefined) {
-    setTimeout(() => {
-      const element = document.getElementById('introduce-section');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 1500);
-  }
-})
+//   if (route.query['ve-msd'] !== undefined) {
+//     setTimeout(() => {
+//       const element = document.getElementById('introduce-section');
+//       if (element) {
+//         element.scrollIntoView({ behavior: 'smooth' });
+//       }
+//     }, 1500);
+//   }
+// })
 
 
 </script>

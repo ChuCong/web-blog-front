@@ -1,13 +1,16 @@
-import type { Course } from "@/models"
+import type { Article } from "@/models"
 export interface Category {
   id: number
   title: string
   slug: string
   description?: string
   url?: string
-  full_url?: string
-  courses: Course[]
-  students_count?: number
+  active?: number
+  seo_key?:string
+  seo_description?:string
+  seo_title?:string
   created_at: string
   updated_at: string
+  articles?: Article[]
+
 }

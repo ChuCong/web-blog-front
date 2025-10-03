@@ -1,8 +1,8 @@
 import { DELETE } from "~/config/constant"
 
 const API = {
-  CATEGORIES: 'categories',
-  TAGS: 'tags',
+  CATEGORIES: 'category',
+  TAGS: 'tag',
   COURSE: 'course',
   COURSE_LEARN: 'course/:course_slug/learn',
   COURSES: 'courses',
@@ -32,5 +32,7 @@ const API = {
   COUNT_DATA: '/count-data',
   SEARCH: 'search',
   CONTACTS: 'contacts',
+  ARTICLES: 'articles',
+  DETAIL_ARTICLE: 'articles/:slug',
 }
 export default API

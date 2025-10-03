@@ -4,52 +4,18 @@
             <div class="flex items-center 2xl:gap-10 gap-7 content_logo_search">
                 <div class="flex gap-4 items-center">
                     <a href="/">
-                        <img src="@/assets/images/Logo_MSD.png" class="w-[100px] " alt="Logo Msd">
+                        <img src="@/assets/images/xo_blog_logo.png" class="w-[100px] " alt="Logo Msd">
                     </a>
                 </div>
             </div>
             <div class="flex gap-[10px] items-center">
                 <div class="">
                     <input type="text" placeholder="Tìm kiếm..."
-                        class="rounded-[10px] text_name_exam h-[40px] border title_font border-gray-300 px-4 focus:border-[#F27619] focus:ring-1 focus:ring-[#F27619] outline-none w-full"
-                        :value="searchText" @input="e => searchText = e.target.value" />
-                    <div v-if="showDialog && state.results.length"
-                        class="absolute left-0 top-full w-full bg-white shadow-lg rounded-lg z-50 max-h-[400px] overflow-auto border-2 border-[#F27619] mt-2">
-                        <div class="flex justify-between items-center px-4 py-3 border-b border-gray-200">
-                            <span class="font-semibold text-lg">Kết quả tìm kiếm</span>
-                            <button @click="showDialog = false"
-                                class="text-2xl font-bold text-gray-500">&times;</button>
-                        </div>
-                        <div class="flex-1">
-                            <div v-for="item in state.results" :key="item.source_id"
-                                class="px-4 py-3 border-b hover:bg-gray-100 cursor-pointer flex justify-between items-center"
-                                @click="handleSelect(item)">
-                                <span class="font-medium truncate max-w-[220px] block">
-                                    {{ item.title }}
-                                </span>
-                                <span class="text-xs text-gray-500 ml-2 flex-shrink-0">
-                                    {{
-                                        item.type === SEARCH_TYPE_COURSE
-                                            ? 'Khóa học'
-                                            : item.type === SEARCH_TYPE_LESSON
-                                                ? 'Bài học'
-                                                : item.type === SEARCH_TYPE_RESOURCE
-                                                    ? 'Tài nguyên'
-                                                    : item.type === SEARCH_TYPE_NEWS
-                                                        ? 'Tin tức'
-                                                        : ''
-                                    }}
-                                </span>
-                            </div>
-                            <div v-if="loading" class="text-center py-2 text-gray-400">Đang tìm kiếm...</div>
-                            <div v-if="!loading && !state.results.length" class="text-center py-2 text-gray-400">Không
-                                có kết quả
-                            </div>
-                        </div>
-                    </div>
+                        class="rounded-[10px] text_name_exam h-[40px] border title_font border-gray-300 px-4 focus:border-[#F27619] focus:ring-1 focus:ring-[#F27619] outline-none w-full" />
                 </div>
-                <div class="boxt_user">
-                    <img @click="showUser" src="@/assets/images/icons/icon-user.svg" class="w-[40px] h-[40px]" alt="Người dùng">
+                <!-- <div class="boxt_user">
+                    <img @click="showUser" src="@/assets/images/icons/icon-user.svg" class="w-[40px] h-[40px]"
+                        alt="Người dùng">
                     <div v-if="isOpen" class="boxUser p-4">
                         <ClientOnly>
                             <SignInButton v-if="!token"></SignInButton>
@@ -90,11 +56,12 @@
                             </div>
                         </ClientOnly>
                     </div>
-                </div>
+                </div> -->
                 <div class="box_menu_left">
-                    <img @click="showMenuLeft" src="@/assets/images/icons/icon_show_menu.svg" class="w-[40px]" alt="Menu">
+                    <img @click="showMenuLeft" src="@/assets/images/icons/icon_show_menu.svg" class="w-[40px]"
+                        alt="Menu">
                     <div v-if="menuLeft"
-                        class="absolute bg-white border border-[#bbbbbb] mt-4 rounded-[10px] shadow-lg w-[300px] px-10 pt-3 pb-10 right-[20px] z-50 title_font">
+                        class="absolute bg-white border border-[#bbbbbb] mt-4 rounded-[10px] shadow-lg w-[300px] px-10 pt-3 pb-3 right-[20px] z-50 title_font">
                         <!-- <div class="relative px-3 py-2 border border-[#6D6E70] rounded-[8px]">
                             <div @click="toggleDropdown" class="flex items-center cursor-pointer gap-[6px] justify-between">
                                 <img :src="currentLanguage.icon" alt="national flag" style="height: 24px;">
@@ -110,8 +77,8 @@
                                 </div>
                             </div>
                         </div> -->
-                        <div class=" border-b mb-5">
-                            <div v-for="(item, index) in listMenuHeader" :key="index" class="py-5 border-b">
+                        <div>
+                            <div v-for="(item, index) in listMenuHeader" :key="index" class="py-5 ">
                                 <a :href="item.router" @click.prevent="handleMenuClick(item.router)"
                                     class="flex gap-5 items-center">
                                     <img :src="item.icon" alt="Menu">
@@ -119,26 +86,9 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="button_qg flex items-center cursor-pointer">
-                            <a href="https://msdunitedwayvn.org/tai-khoan-nhan-tai-tro/" target="_blank"
-                                class="text-[#0044B5] hover:text-[#FFF] px-4 py-[8px] font-semibold uppercase ">
-                                Quyên góp
-                            </a>
-                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M40 20C40 31.0457 31.0457 40 20 40C8.9543 40 0 31.0457 0 20C0 8.9543 8.9543 0 20 0C31.0457 0 40 8.9543 40 20Z"
-                                    fill="#F27619" />
-                                <path
-                                    d="M19.393 10.0016C19.7044 9.9711 19.9843 10.3733 20.1859 10.6053C22.8201 13.6365 25.2866 16.8715 27.9007 19.9248C28.0542 20.1974 28.0262 20.4584 27.8414 20.699L19.7603 29.8631C19.5144 30.0692 19.2696 30.0313 19.0394 29.8252C18.4041 29.2567 17.8241 28.331 17.1908 27.7289C17.0026 27.4996 16.9746 27.1222 17.1738 26.8929L22.6878 20.6425C23.0257 20.1591 22.8273 19.9206 22.5245 19.5285C20.846 17.3572 18.9576 15.3723 17.2563 13.222C17.0179 12.9389 16.889 12.6033 17.125 12.256L19.0889 10.1424C19.169 10.0774 19.2958 10.0109 19.3927 10.0013L19.393 10.0016Z"
-                                    fill="white" />
-                            </svg>
-                        </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </div>
 </template>
@@ -163,7 +113,6 @@ import {
     SEARCH_TYPE_NEWS
 } from '~/common/Constant'
 
-const { state: notificationState, fetchUnreadCount } = useNotification()
 const searchText = ref('')
 const showDialog = ref(false)
 const { state, search, clearResults } = useSearch()
@@ -193,10 +142,7 @@ const userName = JwtService.getUser()
 const menuLeft = ref(false)
 const isOpen = ref(false)
 const listMenuHeader = [
-    { name: 'Về msd', router: '/?ve-msd', icon: IconAbouteMsd },
-    { name: 'khóa học', router: '/khoa-hoc', icon: IconCourse },
-    { name: 'Tài nguyên', router: '/resource', icon: IconResources },
-    { name: 'FAQ', router: '/faq', icon: IconFaq },
+    { name: 'Chuyên mục', router: '/chuyen-muc', icon: IconCourse }
 ];
 
 const listLanguage = [
@@ -257,9 +203,7 @@ const handleSelect = (item: SearchResult) => {
     }
 }
 
-onMounted(() => {
-    fetchUnreadCount()
-})
+
 
 const navigateTo = (route: any) => {
     router.push(route);

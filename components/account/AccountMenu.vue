@@ -62,10 +62,6 @@ import BtnBase from '~/components/elements/BtnBase.vue'
 import { useRouter } from 'vue-router'
 import { useUser } from '@/composables/useUser'
 import anonymousAvatar from '~/assets/images/avatar_nho.png'
-import iconAccountInfo from '~/assets/images/icons/icon_account_info.svg'
-import iconLogout from '~/assets/images/icons/icon_logout.svg'
-import iconMyCourses from '~/assets/images/icons/icon_my_courses.svg'
-import iconNotification from '~/assets/images/icons/icon_notification.svg'
 import Icon from '@/components/elements/Icon.vue'
 import JwtService from "~/services/jwt.service"
 
@@ -81,9 +77,7 @@ const hasImage = ref(false)
 const image = ref<File | null>(null)
 
 const items = [
-  { text: 'Xem thông báo', icon: 'BELL', link: '/thong-tin-ca-nhan/thong-bao' },
   { text: 'Thông tin cá nhân', icon: 'PROFILE', link: '/thong-tin-ca-nhan/profile' },
-  { text: 'Khóa học của tôi', icon: 'COURSE', link: '/thong-tin-ca-nhan/khoa-hoc-cua-toi' },
   { text: 'Đăng xuất', icon:'LOG_OUT', action: 'logout' }
 ]
 
