@@ -1,10 +1,14 @@
 <template>
-    <div class="w-full   p-8">
-        <div class="2xl:w-[50%] xl:w-[60%] mx-auto">
-            <div class="text-2xl font-bold">{{ articleComp.state.article.title }}</div>
-            <div>
-                <div v-html="articleComp.state.article.content"></div>
+    <div class="w-full p-8">
+        <div class="2xl:w-[50%] xl:w-[70%] mx-auto">
+            <div class="text-[30px] font-bold">{{ articleComp.state.article.title }}</div>
+            <div class="flex items-center gap-2 my-4">
+                <img src="@/assets/images/icons/icon_date.svg" alt="">
+                <div class="text-[#6D6E70] ">
+                    {{formatDateTime(articleComp.state.article.created_at) }}
+                </div>
             </div>
+            <div v-html="articleComp.state.article.content" class="pt-5"></div>
         </div>
     </div>
 </template>
@@ -13,7 +17,10 @@ import { useRoute } from 'vue-router'
 import { onMounted } from 'vue'
 import { loadingStore } from "@/store/loading"
 import { useArticle } from '@/composables/useArticle'
+import convertDateTime from "~/mixin/convertDateTime";
 
+const { methods } = convertDateTime;
+const formatDateTime = methods.formatDateTime;
 const loading = loadingStore()
 const route = useRoute()
 const articleComp = useArticle()
@@ -24,6 +31,5 @@ onMounted(async () => {
     await articleComp.fetchArticleBySlug(slug)
     loading.setLoading(false)
 })
-
 </script>
 <style scoped lang="scss"></style>

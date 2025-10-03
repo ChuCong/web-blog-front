@@ -5,18 +5,18 @@ interface State {
     paginate: Paginate,
     article: Article,
     articles: Article[],
+    articleByCategoryId: Article[]
 }
 
 export function useArticle() {
     const state: State = reactive({
         paginate: useState<Paginate>('article_paginate', () => ({} as Paginate)),
         article: useState<Article>('article', () => ({} as Article)),
-        articles: useState<Article[]>('articles', () => [])
+        articles: useState<Article[]>('articles', () => []),
+        articleByCategoryId: useState<Article[]>('article_by_category_id', () => []),   
     })
 
     const article_store = articleStore()
-
-    // Lấy danh sách articles
     const fetchArticles = async (payload: any) => {
         const response = await article_store.fetchArticles(payload);
         if (response) {
@@ -26,7 +26,6 @@ export function useArticle() {
         }
     }
 
-    // Lấy chi tiết article theo slug
     const fetchArticleBySlug = async (slug: string) => {
         const response: ApiResponse<Article> = await article_store.fetchArticleBySlug(slug);
         if (response) {
@@ -34,9 +33,17 @@ export function useArticle() {
         }
     }
 
+    const fetchArticleByCategoryId = async (slug: string) => {
+        const response = await article_store.fetchArticleByCategoryId(slug);
+        if (response) {
+            state.articleByCategoryId.push(...response.data.data);
+        }
+    }
+
     return {
         state,
         fetchArticles,
-        fetchArticleBySlug
+        fetchArticleBySlug,
+        fetchArticleByCategoryId
     }
 }

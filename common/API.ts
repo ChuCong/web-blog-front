@@ -34,5 +34,6 @@ const API = {
   CONTACTS: 'contacts',
   ARTICLES: 'articles',
   DETAIL_ARTICLE: 'articles/:slug',
+  ARTICLES_GET_BY_CATEGORY_ID: 'articles/category/:id',
 }
 export default API
