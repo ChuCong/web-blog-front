@@ -49,6 +49,11 @@
         </a>
       </div>
     </div>
+    <div @click="loadMore"
+                v-if="articleComp.state.paginate && articleComp.state.paginate.current_page < articleComp.state.paginate.total_page"
+                class="px-[60px] text-[#F36F21] py-2 w-fit mx-auto mb-10 border border-[#F36F21] rounded-lg cursor-pointer">
+                Xem thêm
+            </div>
   </div>
 </template>
 <script lang="ts" setup>
@@ -63,21 +68,32 @@ const route = useRoute();
 const loading = loadingStore();
 const articleComp = useArticle();
 const categoryComp = useCategory();
+const payloadArticle = {
+    page: 1,
+    limit: 20,
+  };
 onMounted(async () => {
   loading.setLoading(true);
   const payloadCategory = {
     page: 1,
     limit: 100,
   };
-  const payloadArticle = {
-    page: 1,
-    limit: 20,
-  };
+  
   await articleComp.fetchArticles(payloadArticle);
   await categoryComp.fetchCategories(payloadCategory);
   loading.setLoading(false);
 })
-
+const loadMore = async ()=>{
+  if (articleComp.state.paginate.current_page < articleComp.state.paginate.total_page) {
+        const payloadMore = {
+            page: payloadArticle.page ,
+            limit: payloadArticle.limit + 10,
+        }
+        loading.setLoading(true)
+        await articleComp.fetchArticles(payloadMore)
+        loading.setLoading(false)
+    }
+}
 
 </script>
 <style lang="scss" scoped>
