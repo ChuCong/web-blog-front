@@ -6,16 +6,16 @@
         <p>{{ $t("course.no_course_text") }}</p>
         <img src="~/assets/images/group.svg" width="80" alt="no course" />
       </div>
-      <div v-else class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-4">
+      <!-- <div v-else class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-4">
         <CourseItem v-for="(course, index) in userCourses" :key="course.id" :courseManager="course" />
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import CourseItem from '~/components/course/CourseItem.vue'
+// import CourseItem from '~/components/course/CourseItem.vue'
 import { loadingStore } from "@/store/loading"
 const loading = loadingStore()
 
