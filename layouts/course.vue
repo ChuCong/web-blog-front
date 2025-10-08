@@ -13,40 +13,32 @@
           <NuxtPage />
         </div>
         <!-- Sidebar -->
-        <aside class="lesson-menu-column w-full lg:w-3/12 mt-8 lg:mt-0">
+        <!-- <aside class="lesson-menu-column w-full lg:w-3/12 mt-8 lg:mt-0">
           <LessonInfoBox v-if="courseComp.state.course" :course="courseComp.state.course" />
           <LessonMenu v-if="lessonComp.state.lessons" :lessons="lessonComp.state.lessons"
             :course="courseComp.state.course" />
-        </aside>
+        </aside> -->
       </div>
       <!-- <FooterBlock :listCourseMenu="listCourseMenu" :footerConf="footerConf" /> -->
     </div>
-    <div class="w-full md:w-9/12 pr-0 mb-10 md:mt-0 mt-[54px]">
-      <ListComments :lessonSlug="lessonSlug" :courseSlug="courseSlug" class="ml-0 md:ml-[10%]"></ListComments>
-    </div>
-    <Footer />
   </div>
 </template>
 
 <script setup lang="ts">
 import Header from "@/components/home/Header.vue";
 import HeaderMobile from "~/components/home/HeaderMobile.vue";
-import ListComments from '~/components/lesson/ListComments.vue'
 import { useRoute, useRouter } from 'vue-router'
 import { storeToRefs } from 'pinia'
-import Footer from "~/components/home/Footer.vue";
 // import { useCoursesStore } from '~/stores/courses'
 // import { useLessonsStore } from '~/stores/lessons'
 // import { useSettingStore } from '~/stores/setting'
 // import NavBar from '~/components/widgets/navbar.vue'
 // import FooterBlock from '~/components/footer/footer.vue'
-import LessonMenu from '@/components/lesson/LessonMenu.vue'
-import LessonInfoBox from '@/components/elements/LessonInfoBox.vue'
+
 const route = useRoute()
 const courseSlug = Array.isArray(route.params.course) ? route.params.course[0] : route.params.course;
 const lessonSlug = Array.isArray(route.params.lesson) ? route.params.lesson[0] : route.params.lesson;
-const courseComp = useCourse()
-const lessonComp = useLesson()
+
 // const settingStore = useSettingStore()
 
 // const { courseDetail: course } = storeToRefs(coursesStore)

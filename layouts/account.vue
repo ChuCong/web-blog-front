@@ -16,15 +16,11 @@
         <NuxtPage />
       </div>
     </div>
-    <div>
-      <Footer />
-    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import Header from "@/components/home/Header.vue";
-import Footer from "@/components/home/Footer.vue";
 import AccountMenu from "@/components/account/AccountMenu.vue";
 import HeaderMobile from "~/components/home/HeaderMobile.vue";
 </script>
