@@ -9,9 +9,6 @@
     <div class="main-content ">
         <NuxtPage />
     </div>
-    <!-- <div>
-      <Footer/>
-    </div> -->
   </div>
 </template>
 
@@ -19,8 +16,6 @@
 import { ref, onMounted, computed } from "vue";
 import Header from "@/components/home/Header.vue";
 import HeaderMobile from "~/components/home/HeaderMobile.vue";
-// import Footer from "@/components/home/Footer.vue"
-
 
 </script>
 
