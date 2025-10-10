@@ -8,7 +8,7 @@
                     {{formatDateTime(articleComp.state.article.created_at) }}
                 </div>
             </div>
-            <div v-html="articleComp.state.article.content" class="pt-5"></div>
+            <div v-html="articleComp.state.article.content" class="pt-5 content_new"></div>
         </div>
     </div>
 </template>
@@ -32,4 +32,13 @@ onMounted(async () => {
     loading.setLoading(false)
 })
 </script>
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.content_new {
+  ::v-deep(.ql-syntax) {
+    background-color: #1e1e1e !important;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+  }
+}
+</style>

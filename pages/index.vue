@@ -1,5 +1,5 @@
 <template>
-  <div class="pa-o ma-0 mb-[70px] 2xl:w-[80%] xl:w-[90%] mx-auto px-[10px]">
+  <div v-if="articleComp.state.articles.length > 0" class="pa-o ma-0 mb-[70px] 2xl:w-[80%] xl:w-[90%] mx-auto px-[10px]">
     <div class="bg-[#FFFF] rounded-md banner_home md:flex justify-center gap-5 pt-10">
       <div class="md:w-[70%]">
         <div class="md:flex gap-5 ">
