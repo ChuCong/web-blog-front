@@ -11,26 +11,26 @@ export default defineNuxtConfig({
     head: {
       charset: "utf-16",
       title:
-        "Viện nghiên cứu Quản lý Phát triển bền vững, MSD Vietnam",
+        "Blog Kiến Thức - Chia sẻ kinh nghiệm và mẹo hữu ích - XO.Blog",
       meta: [
         {
           name: "og:title",
           content:
-            "Viện nghiên cứu Quản lý Phát triển bền vững, MSD Vietnam",
+            "Blog Kiến Thức - Chia sẻ kinh nghiệm và mẹo hữu ích - XO.Blog",
         },
         {
           name: "keywords",
-          content: "MSD Vietnam, MSD LMS, MSD Vietnam LMS, Viện Nghiên cứu Quản lý phát triển bền vững LMS, Viện Nghiên cứu Quản lý phát triển bền vững Khoá học, Viện Nghiên cứu Quản lý phát triển bền vững Học online, Viện Nghiên cứu Quản lý phát triển bền vững Bài giảng, học trực tuyến NGO, đào tạo quản trị, khóa học SDG​",
+          content: "Blog Kiến Thức - Chia sẻ kinh nghiệm và mẹo hữu ích - XO.Blog​",
         },
         {
           name: "description",
           content:
-            "KMSD Vietnam LMS – nền tảng học trực tuyến của Viện Nghiên cứu Quản lý Phát triển Bền vững. Chia sẻ tri thức, nâng cao năng lực cho NGO, đối tác và cộng đồng với các khóa học đa dạng về SDG, quản trị, truyền thông và công nghệ. Học tập linh hoạt với video bài giảng tương tác và lấy chứng chỉ online dễ dàng.",
+            "Blog Kiến Thức - Chia sẻ kinh nghiệm và mẹo hữu ích - XO.Blog",
         },
         {
           name: "og:description",
           content:
-            "KMSD Vietnam LMS – nền tảng học trực tuyến của Viện Nghiên cứu Quản lý Phát triển Bền vững. Chia sẻ tri thức, nâng cao năng lực cho NGO, đối tác và cộng đồng với các khóa học đa dạng về SDG, quản trị, truyền thông và công nghệ. Học tập linh hoạt với video bài giảng tương tác và lấy chứng chỉ online dễ dàng.",
+            "Blog Kiến Thức - Chia sẻ kinh nghiệm và mẹo hữu ích - XO.Blog",
         },
         // {
         //   name: "google-site-verification",
